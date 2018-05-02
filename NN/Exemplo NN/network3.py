@@ -50,7 +50,8 @@ if GPU:
     print ("Trying to run under a GPU.  If this is not desired, then modify "+\
         "network3.py\nto set the GPU flag to False.")
     try: theano.config.device = 'gpu'
-    except: pass # it's already set
+    except: 
+        print("não rolou")#pass # it's already set
     theano.config.floatX = 'float32'
 else:
     print ("Running with a CPU.  If this is not desired, then the modify "+\
@@ -59,7 +60,7 @@ else:
 #### Load the MNIST data
 #f = gzip.open(r'data/mnist.pkl.gz', 'rb')
 
-def load_data_shared(filename='C:/Users/R210/Documents/GitHub/Estudo/NN/Exemplo NN/data/mnist.pkl.gz'):
+def load_data_shared(filename='C:/Users/R210.R210-07/Documents/GitHub/Estudo/NN/Exemplo NN/data/mnist.pkl.gz'):
 #def load_data_shared(filename="filename=C:\\Users\\R210\\Documents\\GitHub\\Estudo\\NN\\Exemplo NN\\data\\mnist.pkl.gz"):
     f = gzip.open(filename, 'rb')
     training_data, validation_data, test_data = cPickle.load(f, encoding='latin1') # encoding='latin1' acrescentado no 3.x
